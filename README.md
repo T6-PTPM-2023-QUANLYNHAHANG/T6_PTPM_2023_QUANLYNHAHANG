@@ -7,17 +7,22 @@
   <li>Đỗ Quốc Anh – MSSV: 2001207301</li>
 </ul>
 <br/>
-Chức năng:
-  •	Winform: 
-    o	Đặt thức ăn nước uống, 
-    o	Thanh toán
-    o	Thêm xóa sửa thực đơn
-    o	Thống kê doanh thu theo tháng
-    o	Thiết lập admin và nhân viên
-    o	Quản lý tài khoản khánh hàng
-  •	Web: 
-  o	Đăng nhập tài khoản khánh hàng
-  o	Hiện danh sách món ăn
-  o	Đặt hàng
-AI: Gợi ý món ăn đi kèm (WEB)
+<h2>Chức năng:</h2>
+<h3>WinForm:</h3>
+<ul>
+  <li>Đặt thức ăn nước uống </li>
+  <li>Thanh toán</li>
+  <li>Thêm xóa sửa thực đơn</li>
+  <li>Thống kê doanh thu theo tháng</li>
+  <li>Thiết lập admin và nhân viên</li>
+  <li>Quản lý tài khoản khánh hàng</li>
+</ul>
+<h3>Web:</h3>
+<ul>
+  <li>Đăng nhập tài khoản khánh hàng</li>
+  <li>Hiện danh sách món ăn</li>
+  <li>Thêm xóa sửa thực đơn</li>
+  <li>Đặt hàng</li>
+</ul>
+<h3>AI: Gợi ý món ăn đi kèm (WEB)</h3>
 
