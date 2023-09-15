@@ -1,5 +1,5 @@
 # T6_PTPM_2023_QUANLYNHAHANG
-Đồ Án: QUẢN LÝ NHÀ HÀNG
+<h1>Đồ Án: QUẢN LÝ NHÀ HÀNG</h1>
 THÀNH VIÊN:
 1.	Phan Thanh Trọng – MSSV:20011180172
 2.	Trần Thanh Nhạc – MSSV : 2001207111	
