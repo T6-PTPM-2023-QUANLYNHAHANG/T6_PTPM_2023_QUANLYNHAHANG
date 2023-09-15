@@ -1,9 +1,10 @@
 # T6_PTPM_2023_QUANLYNHAHANG
 <h1>Đồ Án: QUẢN LÝ NHÀ HÀNG</h1>
-THÀNH VIÊN:
+<h2>THÀNH VIÊN:</h2>
 1.	Phan Thanh Trọng – MSSV:20011180172
 2.	Trần Thanh Nhạc – MSSV : 2001207111	
 3.	Đỗ Quốc Anh – MSSV: 2001207301
+<br/>
 Chức năng:
   •	Winform: 
     o	Đặt thức ăn nước uống, 
