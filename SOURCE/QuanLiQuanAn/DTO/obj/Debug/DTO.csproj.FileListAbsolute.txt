@@ -1,0 +1,6 @@
+E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DTO\bin\Debug\DTO.dll
+E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DTO\bin\Debug\DTO.pdb
+E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DTO\obj\Debug\DTO.dll
+E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DTO\obj\Debug\DTO.pdb

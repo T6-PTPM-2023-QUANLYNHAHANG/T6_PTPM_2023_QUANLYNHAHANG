@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYNHAHANG" Class="QLNhaHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ADMIN-PC\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QUANLYNHAHANGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TableFood" Member="TableFoods">
+    <Type Name="TableFood">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TableFood_Bill" Member="Bills" ThisKey="id" OtherKey="idTable" Type="Bill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AccountType_Account" Member="AccountType" ThisKey="id" OtherKey="id" Type="AccountType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccountType" Member="AccountTypes">
+    <Type Name="AccountType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="AccountType_Account" Member="Accounts" ThisKey="id" OtherKey="id" Type="Account" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bill" Member="Bills">
+    <Type Name="Bill">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DateCheckIn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DateCheckOut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idTable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bill_BillInfo" Member="BillInfos" ThisKey="id" OtherKey="idBill" Type="BillInfo" />
+      <Association Name="TableFood_Bill" Member="TableFood" ThisKey="idTable" OtherKey="id" Type="TableFood" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BillInfo" Member="BillInfos">
+    <Type Name="BillInfo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idBill" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idFood" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bill_BillInfo" Member="Bill" ThisKey="idBill" OtherKey="id" Type="Bill" IsForeignKey="true" />
+      <Association Name="Food_BillInfo" Member="Food" ThisKey="idFood" OtherKey="id" Type="Food" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Food" Member="Foods">
+    <Type Name="Food">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Food_BillInfo" Member="BillInfos" ThisKey="id" OtherKey="idFood" Type="BillInfo" />
+      <Association Name="FoodCategory_Food" Member="FoodCategory" ThisKey="idCategory" OtherKey="id" Type="FoodCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FoodCategory" Member="FoodCategories">
+    <Type Name="FoodCategory">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="FoodCategory_Food" Member="Foods" ThisKey="id" OtherKey="idCategory" Type="Food" />
+    </Type>
+  </Table>
+</Database>
