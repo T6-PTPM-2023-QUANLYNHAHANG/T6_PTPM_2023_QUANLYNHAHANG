@@ -39,6 +39,8 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.btnSwitchTable = new System.Windows.Forms.Button();
             this.nmDisCount = new System.Windows.Forms.NumericUpDown();
@@ -80,13 +82,13 @@
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // panel2
@@ -94,7 +96,7 @@
             this.panel2.Controls.Add(this.lsvBill);
             this.panel2.Location = new System.Drawing.Point(447, 85);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 315);
+            this.panel2.Size = new System.Drawing.Size(418, 339);
             this.panel2.TabIndex = 2;
             // 
             // lsvBill
@@ -106,7 +108,7 @@
             this.columnHeader1});
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
-            this.lsvBill.Location = new System.Drawing.Point(3, 0);
+            this.lsvBill.Location = new System.Drawing.Point(3, 6);
             this.lsvBill.Name = "lsvBill";
             this.lsvBill.Size = new System.Drawing.Size(412, 309);
             this.lsvBill.TabIndex = 0;
@@ -134,6 +136,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txtTotalPrice);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.cbSwitchTable);
             this.panel3.Controls.Add(this.btnSwitchTable);
             this.panel3.Controls.Add(this.nmDisCount);
@@ -141,20 +145,40 @@
             this.panel3.Controls.Add(this.btnCheckOut);
             this.panel3.Location = new System.Drawing.Point(447, 406);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(418, 52);
+            this.panel3.Size = new System.Drawing.Size(418, 76);
             this.panel3.TabIndex = 3;
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotalPrice.Location = new System.Drawing.Point(175, 38);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(150, 20);
+            this.txtTotalPrice.TabIndex = 8;
+            this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(203, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Tổng tiền";
             // 
             // cbSwitchTable
             // 
             this.cbSwitchTable.FormattingEnabled = true;
-            this.cbSwitchTable.Location = new System.Drawing.Point(45, 28);
+            this.cbSwitchTable.Location = new System.Drawing.Point(3, 38);
             this.cbSwitchTable.Name = "cbSwitchTable";
             this.cbSwitchTable.Size = new System.Drawing.Size(75, 21);
             this.cbSwitchTable.TabIndex = 6;
             // 
             // btnSwitchTable
             // 
-            this.btnSwitchTable.Location = new System.Drawing.Point(45, 3);
+            this.btnSwitchTable.Location = new System.Drawing.Point(3, 13);
             this.btnSwitchTable.Name = "btnSwitchTable";
             this.btnSwitchTable.Size = new System.Drawing.Size(75, 26);
             this.btnSwitchTable.TabIndex = 5;
@@ -163,7 +187,7 @@
             // 
             // nmDisCount
             // 
-            this.nmDisCount.Location = new System.Drawing.Point(189, 29);
+            this.nmDisCount.Location = new System.Drawing.Point(84, 39);
             this.nmDisCount.Name = "nmDisCount";
             this.nmDisCount.Size = new System.Drawing.Size(74, 20);
             this.nmDisCount.TabIndex = 4;
@@ -171,7 +195,7 @@
             // 
             // btnDiscount
             // 
-            this.btnDiscount.Location = new System.Drawing.Point(189, 3);
+            this.btnDiscount.Location = new System.Drawing.Point(84, 13);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Size = new System.Drawing.Size(75, 26);
             this.btnDiscount.TabIndex = 4;
@@ -180,7 +204,7 @@
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.Location = new System.Drawing.Point(331, 3);
+            this.btnCheckOut.Location = new System.Drawing.Point(331, 13);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(75, 46);
             this.btnCheckOut.TabIndex = 3;
@@ -223,6 +247,7 @@
             this.btnAddFood.TabIndex = 2;
             this.btnAddFood.Text = "Thêm món";
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // cbFood
             // 
@@ -245,10 +270,10 @@
             this.flpTable.AutoScroll = true;
             this.flpTable.Location = new System.Drawing.Point(12, 30);
             this.flpTable.Name = "flpTable";
-            this.flpTable.Size = new System.Drawing.Size(429, 428);
+            this.flpTable.Size = new System.Drawing.Size(429, 452);
             this.flpTable.TabIndex = 5;
             // 
-            // fNhanVien
+            // fStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -259,13 +284,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "fNhanVien";
+            this.Name = "fStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý quán cafe";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDisCount)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
@@ -298,5 +324,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.Label label1;
     }
 }

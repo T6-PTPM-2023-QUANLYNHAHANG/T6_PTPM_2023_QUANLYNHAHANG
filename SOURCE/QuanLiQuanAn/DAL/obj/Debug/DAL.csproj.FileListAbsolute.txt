@@ -7,3 +7,4 @@ E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDung
 E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DAL\obj\Debug\DAL.dll
 E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DAL\obj\Debug\DAL.pdb
+E:\OneDrive - Ho Chi Minh city University of Industry and Trade\hk1-2023\UngDungThongMinh\DOAn\T6_PTPM_2023_QUANLYNHAHANG\SOURCE\QuanLiQuanAn\DAL\bin\Debug\DAL.dll.config

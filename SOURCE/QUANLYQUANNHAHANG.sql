@@ -79,6 +79,7 @@ GO
 
 USE [QUANLYNHAHANG]
 GO
+--insert table food
 SET IDENTITY_INSERT [dbo].[TableFood] ON 
 
 INSERT [dbo].[TableFood] ([id], [name], [status]) VALUES (1, N'Bàn ăn 1', N'Trống')
@@ -92,22 +93,7 @@ INSERT [dbo].[TableFood] ([id], [name], [status]) VALUES (8, N'Bàn ăn 8', N'Tr
 INSERT [dbo].[TableFood] ([id], [name], [status]) VALUES (9, N'Bàn ăn 9', N'Trống')
 INSERT [dbo].[TableFood] ([id], [name], [status]) VALUES (10, N'Bàn ăn 10', N'Trống')
 SET IDENTITY_INSERT [dbo].[TableFood] OFF
-SET IDENTITY_INSERT [dbo].[Bill] ON 
-
-INSERT [dbo].[Bill] ([id], [DateCheckIn], [DateCheckOut], [idTable], [status]) VALUES (1, CAST(N'2023-11-13' AS Date), NULL, 1, 0)
-INSERT [dbo].[Bill] ([id], [DateCheckIn], [DateCheckOut], [idTable], [status]) VALUES (2, CAST(N'2023-11-13' AS Date), NULL, 1, 0)
-INSERT [dbo].[Bill] ([id], [DateCheckIn], [DateCheckOut], [idTable], [status]) VALUES (3, CAST(N'2023-11-13' AS Date), NULL, 2, 0)
-INSERT [dbo].[Bill] ([id], [DateCheckIn], [DateCheckOut], [idTable], [status]) VALUES (4, CAST(N'2023-11-13' AS Date), NULL, 2, 0)
-INSERT [dbo].[Bill] ([id], [DateCheckIn], [DateCheckOut], [idTable], [status]) VALUES (5, CAST(N'2023-11-13' AS Date), NULL, 3, 0)
-INSERT [dbo].[Bill] ([id], [DateCheckIn], [DateCheckOut], [idTable], [status]) VALUES (6, CAST(N'2023-11-13' AS Date), NULL, 3, 0)
-SET IDENTITY_INSERT [dbo].[Bill] OFF
-SET IDENTITY_INSERT [dbo].[AccountType] ON 
-
-INSERT [dbo].[AccountType] ([id], [name]) VALUES (1, N'Admin')
-INSERT [dbo].[AccountType] ([id], [name]) VALUES (2, N'Staff')
-SET IDENTITY_INSERT [dbo].[AccountType] OFF
-INSERT [dbo].[Account] ([UserName], [DisplayName], [PassWord], [id]) VALUES (N'Admin', N'Admin', N'1', 1)
-INSERT [dbo].[Account] ([UserName], [DisplayName], [PassWord], [id]) VALUES (N'Staff', N'Staff1', N'1', 2)
+--insert food category
 SET IDENTITY_INSERT [dbo].[FoodCategory] ON 
 
 INSERT [dbo].[FoodCategory] ([id], [name]) VALUES (1, N'Cơm')
@@ -116,6 +102,7 @@ INSERT [dbo].[FoodCategory] ([id], [name]) VALUES (3, N'Nướng')
 INSERT [dbo].[FoodCategory] ([id], [name]) VALUES (4, N'Xào')
 INSERT [dbo].[FoodCategory] ([id], [name]) VALUES (5, N'Hấp')
 SET IDENTITY_INSERT [dbo].[FoodCategory] OFF
+-- insert food
 SET IDENTITY_INSERT [dbo].[Food] ON 
 
 INSERT [dbo].[Food] ([id], [name], [idCategory], [price]) VALUES (1, N'Cơm rang', 1, 50000)
@@ -144,13 +131,28 @@ INSERT [dbo].[Food] ([id], [name], [idCategory], [price]) VALUES (23, N'Cá hồ
 INSERT [dbo].[Food] ([id], [name], [idCategory], [price]) VALUES (24, N'Cua hấp', 5, 160000)
 INSERT [dbo].[Food] ([id], [name], [idCategory], [price]) VALUES (25, N'Ngao hấp', 5, 100000)
 SET IDENTITY_INSERT [dbo].[Food] OFF
+-- insert account type
+SET IDENTITY_INSERT [dbo].[AccountType] ON 
+
+INSERT [dbo].[AccountType] ([id], [name]) VALUES (1, N'Admin')
+INSERT [dbo].[AccountType] ([id], [name]) VALUES (2, N'Staff')
+SET IDENTITY_INSERT [dbo].[AccountType] OFF
+-- insert account 
+INSERT [dbo].[Account] ([UserName], [DisplayName], [PassWord], [id]) VALUES (N'Admin', N'Admin', N'1', 1)
+INSERT [dbo].[Account] ([UserName], [DisplayName], [PassWord], [id]) VALUES (N'Staff', N'Staff1', N'1', 2)
+-- insert bill
+SET IDENTITY_INSERT [dbo].[Bill] ON 
+
+INSERT [dbo].[Bill] ([id], [DateCheckIn], [DateCheckOut], [idTable], [status]) VALUES (7, CAST(N'2023-11-15' AS Date), NULL, 1, 0)
+INSERT [dbo].[Bill] ([id], [DateCheckIn], [DateCheckOut], [idTable], [status]) VALUES (8, CAST(N'2023-11-15' AS Date), NULL, 2, 0)
+SET IDENTITY_INSERT [dbo].[Bill] OFF
+-- insert bill info
 SET IDENTITY_INSERT [dbo].[BillInfo] ON 
 
-INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (1, 1, 1, 1)
-INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (2, 1, 11, 1)
-INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (3, 1, 14, 3)
-INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (4, 2, 23, 2)
-INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (5, 2, 3, 4)
-INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (6, 2, 25, 1)
+INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (9, 7, 1, 2)
+INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (10, 7, 22, 1)
+INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (11, 7, 25, 1)
+INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (12, 8, 12, 3)
+INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (13, 8, 4, 5)
+INSERT [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (14, 8, 14, 1)
 SET IDENTITY_INSERT [dbo].[BillInfo] OFF
-
