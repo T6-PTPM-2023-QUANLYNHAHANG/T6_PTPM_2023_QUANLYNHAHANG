@@ -29,5 +29,45 @@ namespace BLL
             }).ToList();
             return lst;
         }
+        /// <summary>
+        /// Switch table (switch bill)
+        /// </summary>
+        /// <param name="idTable1"></param>
+        /// <param name="idTable2"></param>
+        /// <returns></returns>
+        // Change tables with the input data tableId, and transfer the bill and billinfo of the two tables to each other
+        public bool SwitchTable(int idTable1, int idTable2)
+        {
+            try
+            {
+                TableFood table1 = db.TableFoods.Where(x => x.id == idTable1).FirstOrDefault();
+                TableFood table2 = db.TableFoods.Where(x => x.id == idTable2).FirstOrDefault();
+                int idBill1 = Bill_BLL.Instance.GetUncheckBillIDByTableID(idTable1);
+                int idBill2 = Bill_BLL.Instance.GetUncheckBillIDByTableID(idTable2);
+                // if table1 and table2 are empty
+                if (idBill1 == -1 && idBill2 == -1)
+                {
+                    return false;
+                }
+                else if (idBill1 != -1 && idBill2 == -1)
+                {
+                    table1.status = "Trống";
+                    table2.status = "Có người";
+                    db.SubmitChanges();
+                    Bill_BLL.Instance.SwitchTable(idTable1, idTable2);
+                }
+                else
+                {
+                    Bill_BLL.Instance.SwitchTable(idTable1, idTable2);
+                }
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

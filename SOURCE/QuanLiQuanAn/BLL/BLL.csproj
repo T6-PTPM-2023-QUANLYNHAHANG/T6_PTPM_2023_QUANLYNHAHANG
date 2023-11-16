@@ -54,6 +54,7 @@
     <Compile Include="FoodCategory_BLL.cs" />
     <Compile Include="FoodMenu_BLL.cs" />
     <Compile Include="Food_BLL.cs" />
+    <Compile Include="IncomeBill_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableFood_BLL.cs" />
   </ItemGroup>

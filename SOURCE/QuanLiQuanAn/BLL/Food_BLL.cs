@@ -18,6 +18,11 @@ namespace BLL
             private set { instance = value; }
         }
         private Food_BLL() { }
+        /// <summary>
+        /// get list Food Category
+        /// </summary>
+        /// <param name="idCategory"></param>
+        /// <returns></returns>
         public List<Food_DTO> getList(int idCategory)
         {
             var query = from f in db.Foods

@@ -1,4 +1,5 @@
-﻿using GUI.TaiKhoan;
+﻿using GUI.QuanLi;
+using GUI.TaiKhoan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fLogin());
+            Application.Run(new fManager());
         }
     }
 }

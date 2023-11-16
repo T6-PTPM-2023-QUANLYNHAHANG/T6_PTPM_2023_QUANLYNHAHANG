@@ -46,6 +46,7 @@
     <Compile Include="FoodCategory_DTO.cs" />
     <Compile Include="FoodMenu_DTO.cs" />
     <Compile Include="Food_DTO.cs" />
+    <Compile Include="IncomeBill_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableFood_DTO.cs" />
   </ItemGroup>

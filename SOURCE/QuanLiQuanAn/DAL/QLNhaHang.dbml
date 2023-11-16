@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYNHAHANG" Class="QLNhaHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=ADMIN-PC\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QUANLYNHAHANGConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TableFood" Member="TableFoods">
-    <Type Name="TableFood">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="TableFood_Bill" Member="Bills" ThisKey="id" OtherKey="idTable" Type="Bill" />
-    </Type>
-  </Table>
   <Table Name="dbo.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -15,6 +7,14 @@
       <Column Name="PassWord" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
       <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="AccountType_Account" Member="AccountType" ThisKey="id" OtherKey="id" Type="AccountType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableFood" Member="TableFoods">
+    <Type Name="TableFood">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TableFood_Bill" Member="Bills" ThisKey="id" OtherKey="idTable" Type="Bill" />
     </Type>
   </Table>
   <Table Name="dbo.AccountType" Member="AccountTypes">
@@ -31,6 +31,8 @@
       <Column Name="DateCheckOut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="idTable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="Bill_BillInfo" Member="BillInfos" ThisKey="id" OtherKey="idBill" Type="BillInfo" />
       <Association Name="TableFood_Bill" Member="TableFood" ThisKey="idTable" OtherKey="id" Type="TableFood" IsForeignKey="true" />
     </Type>

@@ -1,82 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="QLNhaHang">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 8.5" name="QLNhaHang">
   <DataContextMoniker Name="/QLNhaHangDataContext" />
   <nestedChildShapes>
-    <classShape Id="335c70ae-1f62-4a65-8817-dcca9328190d" absoluteBounds="0.75, 4, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/QLNhaHangDataContext/TableFood" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ef831b1e-2c98-414f-9cbf-2ff1c775b5a6" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f82b3533-4314-4b8a-8705-53d060579bf2" absoluteBounds="3.5, 6.875, 2, 1.5785953776041657">
+    <classShape Id="026ae8fa-f6de-488c-a9a4-fdf1c3436bea" absoluteBounds="9.5, 3.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QLNhaHangDataContext/Account" />
       <nestedChildShapes>
-        <elementListCompartment Id="e3636e78-b51e-4e04-acb2-a6f76040e568" absoluteBounds="3.515, 7.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7a01554b-85cf-4c4a-9928-e3c2dcb240fb" absoluteBounds="9.515, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c99262c7-984d-4e2a-ad40-799c14ffdf06" absoluteBounds="0.75, 7.125, 2, 1.1939925130208326">
+    <classShape Id="011621d2-9b4c-4aa5-be24-8c13f058a547" absoluteBounds="0.75, 5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/QLNhaHangDataContext/TableFood" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4cf582c4-00e4-4b65-a0d7-e0a1316c7795" absoluteBounds="0.765, 5.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="27d9e477-99d8-4e28-9ccc-e6f320ad0411" absoluteBounds="6.75, 4.125, 2, 1.1939925130208326">
       <DataClassMoniker Name="/QLNhaHangDataContext/AccountType" />
       <nestedChildShapes>
-        <elementListCompartment Id="8048f33b-d9cf-414e-a635-7c6876a9ad36" absoluteBounds="0.765, 7.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3f3ed426-bf77-4383-b569-386223ff3582" absoluteBounds="6.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cc4533ba-e84a-47a4-836e-8805f121b95d" absoluteBounds="3.5, 3.75, 2, 1.7708968098958326">
+    <classShape Id="4205df12-8592-4caf-a89e-478b5752aa57" absoluteBounds="3.5, 4.625, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QLNhaHangDataContext/Bill" />
       <nestedChildShapes>
-        <elementListCompartment Id="4d4ef2d5-6970-432b-864c-bcea38d164f0" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4e0ddd35-85b6-4c9e-9e6c-7d67dd1e07a2" absoluteBounds="3.515, 5.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d88df7a3-e1e0-4291-aade-34a0880d1d71" absoluteBounds="6.25, 0.875, 2, 1.5785953776041666">
+    <classShape Id="23d37ca6-eff3-490e-8fec-94ecbb19c1b9" absoluteBounds="6.25, 0.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QLNhaHangDataContext/BillInfo" />
       <nestedChildShapes>
-        <elementListCompartment Id="88109b18-a803-4a43-9479-3bcd2e6a2bba" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7a3e41fc-a5d7-424e-a9e7-59bdcd170856" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="589eed20-9629-42f3-8e53-6ba9ad8b2aa4" absoluteBounds="3.5, 0.875, 2, 1.5785953776041666">
+    <classShape Id="46d2137d-e391-4dc7-ac3d-a572437b8988" absoluteBounds="3.5, 0.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QLNhaHangDataContext/Food" />
       <nestedChildShapes>
-        <elementListCompartment Id="ecd5ae82-642c-4038-8b2c-4d6dde32ad51" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c715d373-10a3-436f-8b6a-f7811f35a2a9" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a652b07f-a757-4550-95cd-e96148d751f4" absoluteBounds="0.75, 1.125, 2, 1.1939925130208338">
+    <classShape Id="a46cf135-0f31-492a-b5b4-6e11b8de2a21" absoluteBounds="0.75, 1.125, 2, 1.1939925130208338">
       <DataClassMoniker Name="/QLNhaHangDataContext/FoodCategory" />
       <nestedChildShapes>
-        <elementListCompartment Id="f1bc56ba-28f9-47f2-bc6e-a6873e6f6852" absoluteBounds="0.765, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="855f8acc-2c88-4740-b73d-0fd84a8e16c3" absoluteBounds="0.765, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 7.72199625651042); (3.5 : 7.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.75 : 4.72199625651042); (9.5 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLNhaHangDataContext/AccountType/AccountType_Account" />
       <nodes>
-        <classShapeMoniker Id="c99262c7-984d-4e2a-ad40-799c14ffdf06" />
-        <classShapeMoniker Id="f82b3533-4314-4b8a-8705-53d060579bf2" />
+        <classShapeMoniker Id="27d9e477-99d8-4e28-9ccc-e6f320ad0411" />
+        <classShapeMoniker Id="026ae8fa-f6de-488c-a9a4-fdf1c3436bea" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.69314697265625); (3.5 : 4.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.69314697265625); (3.5 : 5.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLNhaHangDataContext/TableFood/TableFood_Bill" />
       <nodes>
-        <classShapeMoniker Id="335c70ae-1f62-4a65-8817-dcca9328190d" />
-        <classShapeMoniker Id="cc4533ba-e84a-47a4-836e-8805f121b95d" />
+        <classShapeMoniker Id="011621d2-9b4c-4aa5-be24-8c13f058a547" />
+        <classShapeMoniker Id="4205df12-8592-4caf-a89e-478b5752aa57" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.63544840494792); (7.25 : 4.63544840494792); (7.25 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 6.08099609375); (6.46875 : 6.08099609375); (6.46875 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLNhaHangDataContext/Bill/Bill_BillInfo" />
       <nodes>
-        <classShapeMoniker Id="cc4533ba-e84a-47a4-836e-8805f121b95d" />
-        <classShapeMoniker Id="d88df7a3-e1e0-4291-aade-34a0880d1d71" />
+        <classShapeMoniker Id="4205df12-8592-4caf-a89e-478b5752aa57" />
+        <classShapeMoniker Id="23d37ca6-eff3-490e-8fec-94ecbb19c1b9" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 1.66429768880208); (6.25 : 1.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLNhaHangDataContext/Food/Food_BillInfo" />
       <nodes>
-        <classShapeMoniker Id="589eed20-9629-42f3-8e53-6ba9ad8b2aa4" />
-        <classShapeMoniker Id="d88df7a3-e1e0-4291-aade-34a0880d1d71" />
+        <classShapeMoniker Id="46d2137d-e391-4dc7-ac3d-a572437b8988" />
+        <classShapeMoniker Id="23d37ca6-eff3-490e-8fec-94ecbb19c1b9" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 1.72199625651042); (3.5 : 1.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLNhaHangDataContext/FoodCategory/FoodCategory_Food" />
       <nodes>
-        <classShapeMoniker Id="a652b07f-a757-4550-95cd-e96148d751f4" />
-        <classShapeMoniker Id="589eed20-9629-42f3-8e53-6ba9ad8b2aa4" />
+        <classShapeMoniker Id="a46cf135-0f31-492a-b5b4-6e11b8de2a21" />
+        <classShapeMoniker Id="46d2137d-e391-4dc7-ac3d-a572437b8988" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

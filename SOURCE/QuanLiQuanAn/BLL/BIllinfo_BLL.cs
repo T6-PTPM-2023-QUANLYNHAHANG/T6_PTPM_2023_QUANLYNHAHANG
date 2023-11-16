@@ -14,13 +14,24 @@ namespace BLL
         private static BIllinfo_BLL instance;
         public static BIllinfo_BLL Instance { get { if (instance == null) instance = new BIllinfo_BLL(); return instance; } private set => instance = value; }
         private BIllinfo_BLL() { }
-        // get list billinfo by id bill
+        /// <summary>
+        /// get list Billinfo by idBill
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public List<Billinfo_DTO> getListBillInfo(int id)
         {
             List<Billinfo_DTO> lst = new List<Billinfo_DTO>();
             lst = db.BillInfos.Where(x => x.idBill == id).Select(x => new Billinfo_DTO { Id = x.id, BillId = x.idBill, FoodId = x.idFood, Count = x.count }).ToList();
             return lst;
         }
+        /// <summary>
+        /// insert Billinfo
+        /// </summary>
+        /// <param name="idBill"></param>
+        /// <param name="idFood"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
         public int insertBillinfo(int idBill, int idFood, int count)
         {
             try
@@ -42,6 +53,12 @@ namespace BLL
             
 
         }
+        /// <summary>
+        /// check food is exist in billinfo
+        /// </summary>
+        /// <param name="idBill"></param>
+        /// <param name="idFood"></param>
+        /// <returns>Bill info id</returns>
         public int isHaveFoodinBillinfo(int idBill, int idFood)
         {
             try
@@ -58,6 +75,13 @@ namespace BLL
                 return 0;
             }
         }
+        /// <summary>
+        /// Update billinfo
+        /// </summary>
+        /// <param name="idBillInfo"></param>
+        /// <param name="idFood"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
         public int updateBillinfo(int idBillInfo, int idFood ,int count)
         {
             try
