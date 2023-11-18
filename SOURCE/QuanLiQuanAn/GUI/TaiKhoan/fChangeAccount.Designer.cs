@@ -194,6 +194,7 @@
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExti
             // 
@@ -205,7 +206,7 @@
             this.btnExti.Text = "Thoát";
             this.btnExti.UseVisualStyleBackColor = true;
             // 
-            // fAccountProfile
+            // fChangeAccount
             // 
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,7 +220,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Name = "fAccountProfile";
+            this.Name = "fChangeAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin cá nhân";
             this.panel2.ResumeLayout(false);

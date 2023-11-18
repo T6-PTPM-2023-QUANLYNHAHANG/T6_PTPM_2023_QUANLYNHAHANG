@@ -99,6 +99,9 @@
     <EmbeddedResource Include="QuanLi\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TaiKhoan\fChangeAccount.resx">
+      <DependentUpon>fChangeAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoan\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>

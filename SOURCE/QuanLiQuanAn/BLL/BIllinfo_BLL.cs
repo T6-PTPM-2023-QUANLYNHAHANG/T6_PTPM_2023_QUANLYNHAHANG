@@ -102,5 +102,23 @@ namespace BLL
                 return 0;
             }
         }
+
+        public int deleteBillInfoByFoodID(int foodID)
+        {
+            List<BillInfo> billInfos = db.BillInfos.Where(x => x.idFood == foodID).ToList();
+            try
+            {
+                foreach (BillInfo item in billInfos)
+                {
+                    db.BillInfos.DeleteOnSubmit(item);
+                }
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

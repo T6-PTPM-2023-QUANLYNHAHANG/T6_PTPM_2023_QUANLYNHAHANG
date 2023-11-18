@@ -36,5 +36,82 @@ namespace BLL
                         };
             return query.ToList();
         }
+        public List<Food_DTO> getList()
+        {
+            return db.Foods.Select(f => new Food_DTO { 
+                Id = f.id, 
+                Name = f.name, 
+                Price = (float)f.price, 
+                IdCategory = f.idCategory
+            }).ToList();
+        }
+        public int insertFood(Food_DTO food)
+        {
+            try
+            {
+                Food f = new Food();
+                f.name = food.Name;
+                f.idCategory = food.IdCategory;
+                f.price = food.Price;
+                db.Foods.InsertOnSubmit(f);
+                db.SubmitChanges();
+                return f.id;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+            
+        }
+        public int updateFood(Food_DTO food)
+        {
+            try
+            {
+                Food f = db.Foods.Where(x => x.id == food.Id).FirstOrDefault();
+                f.name = food.Name;
+                f.idCategory = food.IdCategory;
+                f.price = food.Price;
+                db.SubmitChanges();
+                return f.id;
+            }
+            catch (Exception)
+            {
+
+                return -1; 
+            }
+            
+        }
+        public int deleteFood(Food_DTO food)
+        {
+            
+            try
+            {
+                BIllinfo_BLL.Instance.deleteBillInfoByFoodID(food.Id);
+                Food f = db.Foods.Where(x => x.id == food.Id).FirstOrDefault();
+                db.Foods.DeleteOnSubmit(f);
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+
+                return -1;
+            }
+        }
+        
+        public List<Food_DTO> searchFoodByName(string foodName)
+        {
+            var Query = from f in db.Foods
+                        where f.name.Contains(foodName)
+                        select new Food_DTO
+                        {
+                            Id = f.id,
+                            Name = f.name,
+                            IdCategory = f.idCategory,
+                            Price = (float)f.price
+                        };
+            return Query.ToList();
+
+        }
     }
 }

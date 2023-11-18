@@ -1,5 +1,7 @@
 ﻿using BLL;
 using DTO;
+using GUI.QuanLi;
+using GUI.TaiKhoan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +17,21 @@ namespace GUI.NhanVien
 {
     public partial class fStaff : Form
     {
-        public fStaff()
+        Account_DTO acc;
+
+        public Account_DTO Acc { get => acc; set => acc = value;}
+
+        public fStaff(Account_DTO account)
         {
             InitializeComponent();
+            this.acc = account;
+            ChangeAccount(acc);
             this.Load += FStaff_Load;
             nmDisCount.ValueChanged += NmDisCount_ValueChanged;
+            
         }
+
+        
 
 
         #region Event
@@ -54,8 +65,13 @@ namespace GUI.NhanVien
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
+            if ((lsvBill.Tag as TableFood_DTO) == null)
+            {
+                MessageBox.Show("Hãy chọn bàn");
+                return;
+            }
             int idTable = (lsvBill.Tag as TableFood_DTO).Id;
-
+            
             int idBill = Bill_BLL.Instance.GetUncheckBillIDByTableID(idTable);
             int idFood = (cbFood.SelectedItem as Food_DTO).Id;
             int count = (int)nmFoodCount.Value;
@@ -113,11 +129,72 @@ namespace GUI.NhanVien
             loadTableFood();
             showBill(table1);
         }
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fManager f = new fManager();
+            f.InsertFood += F_InsertFood;
+            f.UpdateFood += F_UpdateFood;
+            f.DeleteFood += F_DeleteFood1;
+            //this.Hide();
+            f.ShowDialog();
+            //this.Show();
+        }
+
+        private void F_DeleteFood1(object sender, EventArgs e)
+        {
+            loadFood((cbCategory.SelectedItem as FoodCategory_DTO).Id);
+            if (lsvBill.Tag != null)
+                showBill((lsvBill.Tag as TableFood_DTO).Id);
+            loadTableFood();
+        }
+
+
+
+        private void F_UpdateFood(object sender, EventArgs e)
+        {
+            loadFood((cbCategory.SelectedItem as FoodCategory_DTO).Id);
+            if (lsvBill.Tag != null)
+                showBill((lsvBill.Tag as TableFood_DTO).Id);
+
+        }
+
+        private void F_InsertFood(object sender, EventArgs e)
+        {
+            loadFood((cbCategory.SelectedItem as FoodCategory_DTO).Id);
+            if (lsvBill.Tag != null)
+                showBill((lsvBill.Tag as TableFood_DTO).Id);
+
+        }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fChangeAccount f = new fChangeAccount(acc);
+            f.UpdateAccount += f_UpdateAccount;
+            f.ShowDialog();
+            
+        }
+
+        private void f_UpdateAccount(object sender, AccountEvent e)
+        {
+            thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản (" + e.Acc.Displayname + ")";
+        }
         #endregion
 
 
 
         #region Method
+        private void ChangeAccount(Account_DTO acc)
+        {
+            if (acc.IdType == 1)
+            {
+                adminToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                adminToolStripMenuItem.Enabled = false;
+            }
+            thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + acc.Displayname + ")";
+        }
         private void loadCbbTable()
         {
             cbSwitchTable.DataSource = BLL.TableFood_BLL.Instance.getList();
@@ -187,6 +264,8 @@ namespace GUI.NhanVien
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTotalPrice.Text = totalPrice.ToString("c", culture);
         }
+
+
 
 
 

@@ -44,35 +44,35 @@
         <elementListCompartment Id="855f8acc-2c88-4740-b73d-0fd84a8e16c3" absoluteBounds="0.765, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.75 : 4.72199625651042); (9.5 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.75 : 4.72199625651042); (9.5 : 4.72199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNhaHangDataContext/AccountType/AccountType_Account" />
       <nodes>
         <classShapeMoniker Id="27d9e477-99d8-4e28-9ccc-e6f320ad0411" />
         <classShapeMoniker Id="026ae8fa-f6de-488c-a9a4-fdf1c3436bea" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.69314697265625); (3.5 : 5.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.69314697265625); (3.5 : 5.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNhaHangDataContext/TableFood/TableFood_Bill" />
       <nodes>
         <classShapeMoniker Id="011621d2-9b4c-4aa5-be24-8c13f058a547" />
         <classShapeMoniker Id="4205df12-8592-4caf-a89e-478b5752aa57" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.08099609375); (6.46875 : 6.08099609375); (6.46875 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 6.08099609375); (6.46875 : 6.08099609375); (6.46875 : 2.45359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNhaHangDataContext/Bill/Bill_BillInfo" />
       <nodes>
         <classShapeMoniker Id="4205df12-8592-4caf-a89e-478b5752aa57" />
         <classShapeMoniker Id="23d37ca6-eff3-490e-8fec-94ecbb19c1b9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.66429768880208); (6.25 : 1.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 1.66429768880208); (6.25 : 1.66429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNhaHangDataContext/Food/Food_BillInfo" />
       <nodes>
         <classShapeMoniker Id="46d2137d-e391-4dc7-ac3d-a572437b8988" />
         <classShapeMoniker Id="23d37ca6-eff3-490e-8fec-94ecbb19c1b9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.72199625651042); (3.5 : 1.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.72199625651042); (3.5 : 1.72199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLNhaHangDataContext/FoodCategory/FoodCategory_Food" />
       <nodes>
         <classShapeMoniker Id="a46cf135-0f31-492a-b5b4-6e11b8de2a21" />

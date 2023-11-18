@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using GUI.NhanVien;
 using GUI.QuanLi;
 using System;
@@ -40,9 +41,10 @@ namespace GUI.TaiKhoan
         {
             string username = txtUserName.Text;
             string password = txtPassWord.Text;
-            if (Account_BLL.Instance.Login(username,  password))
+            Account_DTO acc = Account_BLL.Instance.Login(username, password);
+            if (acc != null)
             {
-                fStaff f = new fStaff();
+                fStaff f = new fStaff(acc);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
