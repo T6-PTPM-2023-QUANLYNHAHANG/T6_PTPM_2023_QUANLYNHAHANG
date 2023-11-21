@@ -73,6 +73,11 @@ namespace GUI.NhanVien
             int idTable = (lsvBill.Tag as TableFood_DTO).Id;
             
             int idBill = Bill_BLL.Instance.GetUncheckBillIDByTableID(idTable);
+            if ((cbFood.SelectedItem as Food_DTO) == null)
+            {
+                MessageBox.Show("Hãy chọn món ăn");
+                return;
+            }
             int idFood = (cbFood.SelectedItem as Food_DTO).Id;
             int count = (int)nmFoodCount.Value;
             // idBill don't exist
@@ -109,10 +114,13 @@ namespace GUI.NhanVien
             int idBill = Bill_BLL.Instance.GetUncheckBillIDByTableID(table.Id);
             int discount = (int)nmDisCount.Value;
             float totalPrice = float.Parse(txtTotalPrice.Text.Split(',')[0]);
-            totalPrice = totalPrice - (totalPrice / 100) * discount;
+            //totalPrice = totalPrice - (totalPrice / 100) * discount;
             if (idBill != -1)
             {
-                if (MessageBox.Show("Bạn có muốn thanh toán cho " + table.Name, "Thanh toán hoá đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Bạn có muốn thanh toán cho " + table.Name + 
+                    " và phần trăm giảm giá là " + discount + "%" + " tổng tiền là " + totalPrice + " VNĐ"
+                    , "Thanh toán hoá đơn"
+                    , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Bill_BLL.Instance.checkBillOut(idBill,discount,totalPrice);
                     showBill(table.Id);
@@ -131,17 +139,18 @@ namespace GUI.NhanVien
         }
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fManager f = new fManager();
-            f.InsertFood += F_InsertFood;
-            f.UpdateFood += F_UpdateFood;
-            f.DeleteFood += F_DeleteFood1;
+            fManager f = new fManager(acc);
+            f.InsertEvent += F_InsertEvent;
+            f.UpdateEvent += F_UpdateEvent;
+            f.DeleteEvent += F_DeleteEvent;
             //this.Hide();
             f.ShowDialog();
             //this.Show();
         }
 
-        private void F_DeleteFood1(object sender, EventArgs e)
+        private void F_DeleteEvent(object sender, EventArgs e)
         {
+            loadFoodCategory();
             loadFood((cbCategory.SelectedItem as FoodCategory_DTO).Id);
             if (lsvBill.Tag != null)
                 showBill((lsvBill.Tag as TableFood_DTO).Id);
@@ -150,20 +159,22 @@ namespace GUI.NhanVien
 
 
 
-        private void F_UpdateFood(object sender, EventArgs e)
+        private void F_UpdateEvent(object sender, EventArgs e)
         {
+            loadFoodCategory();
             loadFood((cbCategory.SelectedItem as FoodCategory_DTO).Id);
             if (lsvBill.Tag != null)
                 showBill((lsvBill.Tag as TableFood_DTO).Id);
-
+            loadTableFood();
         }
 
-        private void F_InsertFood(object sender, EventArgs e)
+        private void F_InsertEvent(object sender, EventArgs e)
         {
+            loadFoodCategory();
             loadFood((cbCategory.SelectedItem as FoodCategory_DTO).Id);
             if (lsvBill.Tag != null)
                 showBill((lsvBill.Tag as TableFood_DTO).Id);
-
+            loadTableFood();
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -203,9 +214,15 @@ namespace GUI.NhanVien
         }
         private void loadFood(int idCategory)
         {
-            cbFood.DataSource = Food_BLL.Instance.getList(idCategory);
-            cbFood.DisplayMember = "Name";
-            cbFood.ValueMember = "Id";
+            List<Food_DTO> lst = Food_BLL.Instance.getList(idCategory);
+            if (lst.Count > 0)
+            {
+                cbFood.DataSource = Food_BLL.Instance.getList(idCategory);
+                cbFood.DisplayMember = "Name";
+                cbFood.ValueMember = "Id";
+                return;
+            }
+            cbFood.DataSource = null;
 
         }
         private void loadFoodCategory()
@@ -270,8 +287,12 @@ namespace GUI.NhanVien
 
 
 
+
         #endregion
 
-        
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

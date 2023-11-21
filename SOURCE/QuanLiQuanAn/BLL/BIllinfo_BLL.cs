@@ -120,5 +120,22 @@ namespace BLL
                 return 0;
             }
         }
+        public int deleteBillInfoByBillID(int billID)
+        {
+            List<BillInfo> billInfos = db.BillInfos.Where(x => x.idBill == billID).ToList();
+            try
+            {
+                foreach (BillInfo item in billInfos)
+                {
+                    db.BillInfos.DeleteOnSubmit(item);
+                }
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

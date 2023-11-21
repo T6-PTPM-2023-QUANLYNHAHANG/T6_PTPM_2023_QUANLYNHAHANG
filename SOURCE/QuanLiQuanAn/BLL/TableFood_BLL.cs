@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,54 @@ namespace BLL
                 return false;
             }
         }
-
+        public int insertTable(TableFood_DTO tb)
+        {
+            int result = 0;
+            try
+            {
+                TableFood table = new TableFood();
+                table.name = tb.Name.Trim();
+                table.status = "Trống";
+                db.TableFoods.InsertOnSubmit(table);
+                db.SubmitChanges();
+                result = table.id;
+                return result;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+        public int updateTable(TableFood_DTO tb)
+        {
+            int result = 0;
+            try
+            {
+                TableFood table = db.TableFoods.Where(d=>d.id == tb.Id).SingleOrDefault();
+                table.name = tb.Name.Trim();
+                db.SubmitChanges();
+                result = table.id;
+                return result;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+        public int deleteTable(TableFood_DTO tb)
+        {
+            try
+            {
+                Bill_BLL.Instance.deleteBillByTableID(tb.Id);
+                TableFood table = db.TableFoods.Where(x => x.id == tb.Id).SingleOrDefault();
+                db.TableFoods.DeleteOnSubmit(table);
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

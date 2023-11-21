@@ -19,6 +19,12 @@ namespace BLL
             private set { instance = value; }
         }
         private Account_BLL() { }
+        public List<Account_DTO> GetListAccount()
+        {
+            List<Account_DTO> list = new List<Account_DTO>();
+            list = db.Accounts.Select(p => new Account_DTO { Username = p.UserName, Password = p.PassWord, Displayname = p.DisplayName, IdType = p.id }).ToList();
+            return list;
+        }
         public Account_DTO Login(string username)
         {
             // kiểm tra username và password có tồn tại trong database không
@@ -45,6 +51,73 @@ namespace BLL
             else
             {
                 return false;
+            }
+        }
+
+        public int insertAccount(Account_DTO acc)
+        {
+            
+            try
+            {
+                Account account = new Account();
+                account.UserName = acc.Username;
+                account.DisplayName = acc.Displayname;
+                account.id = (int)acc.IdType;
+                account.PassWord = "0";
+                db.Accounts.InsertOnSubmit(account);
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+        }
+        public int updateAccount(Account_DTO acc)
+        {
+            try
+            {
+                Account account = db.Accounts.Where(p => p.UserName == acc.Username).SingleOrDefault();
+                account.DisplayName = acc.Displayname;
+                account.id = (int)acc.IdType;
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+        }
+        public int deleteAccount(string username)
+        {
+            try
+            {
+                Account account = db.Accounts.Where(p => p.UserName == username).SingleOrDefault();
+                db.Accounts.DeleteOnSubmit(account);
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+        }
+        public int resetPassword(string username)
+        {
+            try
+            {
+                Account account = db.Accounts.Where(p => p.UserName == username).SingleOrDefault();
+                account.PassWord = "0";
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+
+                return 0;
             }
         }
     }

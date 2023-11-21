@@ -33,5 +33,53 @@ namespace BLL
                        };
             return query.ToList();
         }
+        public int insertCategory(FoodCategory_DTO category)
+        {
+            int result = 0;
+            try
+            {
+                FoodCategory fc = new FoodCategory();
+                fc.name = category.Name;
+                db.FoodCategories.InsertOnSubmit(fc);
+                db.SubmitChanges();
+                result = fc.id;
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        // delete category
+        public int deleteCategory(FoodCategory_DTO category)
+        {
+            try
+            {
+                Food_BLL.Instance.deleteAllFoodbyCategoryID(category.Id);
+                FoodCategory foodCategory = db.FoodCategories.Where(x => x.id == category.Id).SingleOrDefault();
+                db.FoodCategories.DeleteOnSubmit(foodCategory);
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+        // update category
+        public int updateCategory(FoodCategory_DTO category)
+        {
+            try
+            {
+                var query = db.FoodCategories.Where(x => x.id == category.Id).SingleOrDefault();
+                query.name = category.Name;
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }

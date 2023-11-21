@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountType_BLL.cs" />
     <Compile Include="Account_BLL.cs" />
     <Compile Include="BIllinfo_BLL.cs" />
     <Compile Include="Bill_BLL.cs" />

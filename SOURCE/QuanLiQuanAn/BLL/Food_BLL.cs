@@ -98,7 +98,26 @@ namespace BLL
                 return -1;
             }
         }
-        
+        public int deleteAllFoodbyCategoryID(int idCategory)
+        {
+            try
+            {
+                List<Food_DTO> lst = getList(idCategory);
+                foreach (Food_DTO item in lst)
+                {
+                    BIllinfo_BLL.Instance.deleteBillInfoByFoodID(item.Id);
+                    Food f = db.Foods.Where(x => x.id == item.Id).FirstOrDefault();
+                    db.Foods.DeleteOnSubmit(f);
+                    db.SubmitChanges();
+                }
+                return 1;
+            }
+            catch (Exception)
+            {
+
+                return -1;
+            }
+        }
         public List<Food_DTO> searchFoodByName(string foodName)
         {
             var Query = from f in db.Foods
