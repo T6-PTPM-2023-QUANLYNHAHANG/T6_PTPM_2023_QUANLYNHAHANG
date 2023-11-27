@@ -32,7 +32,7 @@
   <li>Thêm xóa sửa thực đơn</li>
   <li>Thống kê doanh thu theo tháng</li>
   <li>Thiết lập admin và nhân viên</li>
-  <li>Quản lý tài khoản khách hàng</li>
+  <li>Quản lý tài khoản</li>
 </ul>
 <h3>Web:</h3>
 <ul>
