@@ -44,6 +44,7 @@ namespace GUI.TaiKhoan
                 if (Account_BLL.Instance.UpdateAccount(username, displayname, password, newpass))
                 {
                     MessageBox.Show("Cập nhật thành công");
+                    // truyền tài khoản về form fstaff
                     if (updateAccount != null)
                         updateAccount(this, new AccountEvent(Account_BLL.Instance.Login(username)));
                 }
@@ -58,14 +59,7 @@ namespace GUI.TaiKhoan
             }
         }
 
-        private bool checkNewPass(string newpass, string renewpass)
-        {
-            if (newpass.Equals(renewpass))
-            {
-                return true;
-            }
-            return false;
-        }
+       
 
         private event EventHandler<AccountEvent> updateAccount;
         public event EventHandler<AccountEvent> UpdateAccount
@@ -77,6 +71,24 @@ namespace GUI.TaiKhoan
 
         #endregion
         #region methods
+        /// <summary>
+        /// kiểm tra mật khẩu mới có trùng khớp hay không
+        /// </summary>
+        /// <param name="newpass"></param>
+        /// <param name="renewpass"></param>
+        /// <returns></returns>
+        private bool checkNewPass(string newpass, string renewpass)
+        {
+            if (newpass.Equals(renewpass))
+            {
+                return true;
+            }
+            return false;
+        }
+        /// <summary>
+        /// hiện thị thông tin tài khoản
+        /// </summary>
+        /// <param name="acc"></param>
         private void loadAccount(Account_DTO acc)
         {
             txbUserName.Text = acc.Username;
@@ -86,6 +98,7 @@ namespace GUI.TaiKhoan
 
 
     }
+    // tạo event để truyền dữ liệu tài khoản qua form fstaff
     public class AccountEvent : EventArgs
     {
         private Account_DTO acc;

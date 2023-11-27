@@ -16,7 +16,7 @@ namespace BLL
         private FoodMenu_BLL() { }
         // get list FoodMenu
         /// <summary>
-        /// get list FoodMenu
+        /// lấy danh sách món ăn theo billID, để hiện lện table 
         /// </summary>
         /// <param name="billID"></param>
         /// <returns> list foodmenu</returns>

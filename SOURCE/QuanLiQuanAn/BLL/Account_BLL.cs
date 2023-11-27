@@ -19,24 +19,47 @@ namespace BLL
             private set { instance = value; }
         }
         private Account_BLL() { }
+        /// <summary>
+        /// Lấy danh sách tài khoản
+        /// </summary>
+        /// <returns></returns>
         public List<Account_DTO> GetListAccount()
         {
             List<Account_DTO> list = new List<Account_DTO>();
             list = db.Accounts.Select(p => new Account_DTO { Username = p.UserName, Password = p.PassWord, Displayname = p.DisplayName, IdType = p.id }).ToList();
             return list;
         }
+        /// <summary>
+        /// Kiểm tra tài khoản có tồn tại
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns>Account_DTO</returns>
         public Account_DTO Login(string username)
         {
             // kiểm tra username và password có tồn tại trong database không
             return db.Accounts.Where(p => p.UserName == username).Select(p => new Account_DTO { Username = p.UserName, Password = p.PassWord, IdType = p.id, Displayname = p.DisplayName }).SingleOrDefault();
 
         }
+        /// <summary>
+        /// Kiểm tra tài khoản có tồn tại
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>Account_DTO</returns>
         public Account_DTO Login(string username, string password)
         {
             // kiểm tra username và password có tồn tại trong database không
             return db.Accounts.Where(p => p.UserName == username && p.PassWord == password).Select(p => new Account_DTO { Username = p.UserName, Password = p.PassWord, IdType = p.id, Displayname = p.DisplayName }).SingleOrDefault();
                 
         }
+        /// <summary>
+        /// Chỉnh sửa tên hiện thị và password
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="displayname"></param>
+        /// <param name="password"></param>
+        /// <param name="newpass"></param>
+        /// <returns>true false</returns>
         public bool UpdateAccount(string username, string displayname, string password, string newpass)
         {
             // kiểm tra username và password có tồn tại trong database không
@@ -53,7 +76,11 @@ namespace BLL
                 return false;
             }
         }
-
+        /// <summary>
+        /// Thêm tài khoản
+        /// </summary>
+        /// <param name="acc"></param>
+        /// <returns>true false</returns>
         public int insertAccount(Account_DTO acc)
         {
             
@@ -74,6 +101,11 @@ namespace BLL
                 return 0;
             }
         }
+        /// <summary>
+        /// Chỉnh sửa loại tài khoản
+        /// </summary>
+        /// <param name="acc"></param>
+        /// <returns></returns>
         public int updateAccount(Account_DTO acc)
         {
             try
@@ -90,6 +122,11 @@ namespace BLL
                 return 0;
             }
         }
+        /// <summary>
+        /// xoá tài khoản
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         public int deleteAccount(string username)
         {
             try
@@ -105,6 +142,11 @@ namespace BLL
                 return 0;
             }
         }
+        /// <summary>
+        /// reset password
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         public int resetPassword(string username)
         {
             try

@@ -17,6 +17,10 @@ namespace BLL
             private set { instance = value; }
         }
         private AccountType_BLL() { }
+        /// <summary>
+        /// lấy danh sách loại tài khoản
+        /// </summary>
+        /// <returns>List Account</returns>
         public List<AccountType_DTO> GetListAccountType()
         {
             List<AccountType_DTO> list = new List<AccountType_DTO>();

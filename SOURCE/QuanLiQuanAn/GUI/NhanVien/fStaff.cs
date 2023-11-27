@@ -31,10 +31,14 @@ namespace GUI.NhanVien
             
         }
 
-        
+
 
 
         #region Event
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void NmDisCount_ValueChanged(object sender, EventArgs e)
         {
             TableFood_DTO table = lsvBill.Tag as TableFood_DTO;
@@ -194,6 +198,10 @@ namespace GUI.NhanVien
 
 
         #region Method
+        /// <summary>
+        /// enable admin menu if account is admin and show displayname
+        /// </summary>
+        /// <param name="acc"></param>
         private void ChangeAccount(Account_DTO acc)
         {
             if (acc.IdType == 1)
@@ -206,12 +214,19 @@ namespace GUI.NhanVien
             }
             thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + acc.Displayname + ")";
         }
+        /// <summary>
+        /// load combobox table
+        /// </summary>
         private void loadCbbTable()
         {
             cbSwitchTable.DataSource = BLL.TableFood_BLL.Instance.getList();
             cbSwitchTable.DisplayMember = "Name";
             cbSwitchTable.ValueMember = "Id";
         }
+        /// <summary>
+        /// load food by idCategory
+        /// </summary>
+        /// <param name="idCategory"></param>
         private void loadFood(int idCategory)
         {
             List<Food_DTO> lst = Food_BLL.Instance.getList(idCategory);
@@ -225,6 +240,9 @@ namespace GUI.NhanVien
             cbFood.DataSource = null;
 
         }
+        /// <summary>
+        /// load food category
+        /// </summary>
         private void loadFoodCategory()
         {
             cbCategory.DataSource = FoodCategory_BLL.Instance.getList();
@@ -234,6 +252,9 @@ namespace GUI.NhanVien
             loadFood(idCategory);
 
         }
+        /// <summary>
+        /// load hiện thị bàn ăn
+        /// </summary>
         private void loadTableFood()
         {
             flpTable.Controls.Clear();
@@ -259,7 +280,10 @@ namespace GUI.NhanVien
         }
 
 
-
+        /// <summary>
+        /// hiện thị bill
+        /// </summary>
+        /// <param name="tableID"></param>
         private void showBill(int tableID)
         {
             lsvBill.Items.Clear();
@@ -290,9 +314,6 @@ namespace GUI.NhanVien
 
         #endregion
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
     }
 }

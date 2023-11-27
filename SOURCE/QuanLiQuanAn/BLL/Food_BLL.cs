@@ -19,10 +19,10 @@ namespace BLL
         }
         private Food_BLL() { }
         /// <summary>
-        /// get list Food Category
+        /// get list Food by idCategory
         /// </summary>
         /// <param name="idCategory"></param>
-        /// <returns></returns>
+        /// <returns>List<Food_DTO></returns>
         public List<Food_DTO> getList(int idCategory)
         {
             var query = from f in db.Foods
@@ -36,6 +36,10 @@ namespace BLL
                         };
             return query.ToList();
         }
+        /// <summary>
+        /// get list food
+        /// </summary>
+        /// <returns>List<Food_DTO></returns>
         public List<Food_DTO> getList()
         {
             return db.Foods.Select(f => new Food_DTO { 
@@ -45,6 +49,11 @@ namespace BLL
                 IdCategory = f.idCategory
             }).ToList();
         }
+        /// <summary>
+        /// thêm món ăn mới
+        /// </summary>
+        /// <param name="food"></param>
+        /// <returns></returns>
         public int insertFood(Food_DTO food)
         {
             try
@@ -63,6 +72,11 @@ namespace BLL
             }
             
         }
+        /// <summary>
+        /// cập nhật món ăn
+        /// </summary>
+        /// <param name="food"></param>
+        /// <returns></returns>
         public int updateFood(Food_DTO food)
         {
             try
@@ -81,6 +95,11 @@ namespace BLL
             }
             
         }
+        /// <summary>
+        /// xoá món ăn
+        /// </summary>
+        /// <param name="food"></param>
+        /// <returns></returns>
         public int deleteFood(Food_DTO food)
         {
             
@@ -98,6 +117,11 @@ namespace BLL
                 return -1;
             }
         }
+        /// <summary>
+        /// xoá món ăn theo id category
+        /// </summary>
+        /// <param name="idCategory"></param>
+        /// <returns></returns>
         public int deleteAllFoodbyCategoryID(int idCategory)
         {
             try
@@ -118,6 +142,11 @@ namespace BLL
                 return -1;
             }
         }
+        /// <summary>
+        /// yimf món ăn theo tên
+        /// </summary>
+        /// <param name="foodName"></param>
+        /// <returns></returns>
         public List<Food_DTO> searchFoodByName(string foodName)
         {
             var Query = from f in db.Foods

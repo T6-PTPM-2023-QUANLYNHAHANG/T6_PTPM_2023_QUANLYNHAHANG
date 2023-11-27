@@ -33,6 +33,11 @@ namespace BLL
                        };
             return query.ToList();
         }
+        /// <summary>
+        /// thêm loại món ăn mới
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
         public int insertCategory(FoodCategory_DTO category)
         {
             int result = 0;
@@ -50,7 +55,11 @@ namespace BLL
                 return 0;
             }
         }
-        // delete category
+        /// <summary>
+        /// xoá loại món ăn
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
         public int deleteCategory(FoodCategory_DTO category)
         {
             try
@@ -66,7 +75,11 @@ namespace BLL
                 return 0;
             }
         }
-        // update category
+        /// <summary>
+        /// cập nhật loại món ăn
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
         public int updateCategory(FoodCategory_DTO category)
         {
             try

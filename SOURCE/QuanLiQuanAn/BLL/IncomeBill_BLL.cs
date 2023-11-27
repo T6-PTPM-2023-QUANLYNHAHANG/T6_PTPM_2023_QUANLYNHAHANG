@@ -13,6 +13,12 @@ namespace BLL
         private static IncomeBill_BLL instance;
         public static IncomeBill_BLL Instance { get { if (instance == null) instance = new IncomeBill_BLL(); return instance; } private set => instance = value; }
         private IncomeBill_BLL() { }
+        /// <summary>
+        /// lấy danh sách hóa đơn theo ngày
+        /// </summary>
+        /// <param name="dateCheckIn"></param>
+        /// <param name="dateCheckOut"></param>
+        /// <returns></returns>
         public List<IncomeBill_DTO> GetListIncomeBillByDate(DateTime dateCheckIn, DateTime dateCheckOut)
         {
             List<IncomeBill_DTO> list = new List<IncomeBill_DTO>();

@@ -16,7 +16,7 @@ namespace BLL
         public static Bill_BLL Instance { get { if (instance == null) instance = new Bill_BLL(); return instance; } private set => instance = value; }
         private Bill_BLL() { }
         /// <summary>
-        /// Get billId by tableId don't check out
+        /// lấy bill id chưa thanh toán theo id bàn
         /// </summary>
         /// <param name="tableID"></param>
         /// <returns>Bill id or -1</returns>
@@ -56,7 +56,7 @@ namespace BLL
             }
         }
         /// <summary>
-        /// check out bill
+        /// thanh toán hoá đơn
         /// </summary>
         /// <param name="idBill"></param>
         /// <param name="discount"></param>
@@ -90,7 +90,7 @@ namespace BLL
             Bill bill1 = db.Bills.Where(x => x.idTable == idTable1 && x.status == 0).FirstOrDefault();
             Bill bill2 = db.Bills.Where(x => x.idTable == idTable2 && x.status == 0).FirstOrDefault();
             
-
+            // table 2 does not have a bill
             if (bill1 != null && bill2 == null)
             {
                 int idBill1 = bill1.id;
@@ -123,6 +123,11 @@ namespace BLL
             }
             db.SubmitChanges();
         }
+        /// <summary>
+        /// delete list bill by table id
+        /// </summary>
+        /// <param name="TableID"></param>
+        /// <returns></returns>
         public int deleteBillByTableID(int TableID)
         {
             try

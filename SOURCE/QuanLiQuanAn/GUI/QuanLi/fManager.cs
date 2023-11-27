@@ -306,6 +306,10 @@ namespace GUI.QuanLi
 
 
         #region methods
+        /// <summary>
+        /// lấy dữ liệu từ form
+        /// </summary>
+        /// <returns></returns>
         private Account_DTO getAccount()
         {
             string username = txbUserName.Text;
@@ -314,42 +318,65 @@ namespace GUI.QuanLi
             int idType = Convert.ToInt32(cbAccountType.SelectedValue.ToString());
             return new Account_DTO(username, displayname, password, idType);
         }
+        /// <summary>
+        /// load combobox loại tài khoản
+        /// </summary>
         private void loadCbbAccountType()
         {
             cbAccountType.DataSource = BLL.AccountType_BLL.Instance.GetListAccountType();
             cbAccountType.DisplayMember = "Name";
             cbAccountType.ValueMember = "Id";
         }
+        /// <summary>
+        /// thiết lập binding cho các textbox tài khoản
+        /// </summary>
         private void loadAccountBinding()
         {
             txbUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Username", true, DataSourceUpdateMode.Never));
             txbDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Displayname", true, DataSourceUpdateMode.Never));
             cbAccountType.DataBindings.Add(new Binding("SelectedValue", dtgvAccount.DataSource, "IdType", true, DataSourceUpdateMode.Never));
         }
-
+        /// <summary>
+        /// load dữ liệu tài khoản
+        /// </summary>
         private void loadAccount()
         {
             dtgvAccount.DataSource = BLL.Account_BLL.Instance.GetListAccount();
         }
+        /// <summary>
+        /// thiết lập binding cho các textbox bàn ăn
+        /// </summary>
         private void loadTableBinding()
         {
             txbTableID.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Id", true, DataSourceUpdateMode.Never));
             txbTableName.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Name", true, DataSourceUpdateMode.Never));
 
         }
+        /// <summary>
+        /// load dữ liệu bàn ăn
+        /// </summary>
         private void loadTable()
         {
             tableList.DataSource = BLL.TableFood_BLL.Instance.getList();
         }
+        /// <summary>
+        /// thiết lập binding cho các textbox danh mục
+        /// </summary>
         private void loadCategoryBinding()
         {
             txbCategoryID.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "Id", true, DataSourceUpdateMode.Never));
             txbCategoryName.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "Name", true, DataSourceUpdateMode.Never));
         }
+        /// <summary>
+        /// load dữ liệu danh mục
+        /// </summary>
         private void loadCategory()
         {
             categoryList.DataSource = BLL.FoodCategory_BLL.Instance.getList();
         }
+        /// <summary>
+        /// thiết lập binding cho các textbox món ăn
+        /// </summary>
         private void loadFoodBinding()
         {
             txbFoodName.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "Name", true, DataSourceUpdateMode.Never));
@@ -357,26 +384,44 @@ namespace GUI.QuanLi
             nmFoodPrice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "Price", true, DataSourceUpdateMode.Never));
             cbFoodCategory.DataBindings.Add(new Binding("SelectedValue", dtgvFood.DataSource, "IdCategory", true, DataSourceUpdateMode.Never));
         }
+        /// <summary>
+        /// thiết lập ngày tháng mặc định
+        /// </summary>
         private void LoadDate()
         {
             DateTime today = DateTime.Now;
             dtpkFromDate.Value = new DateTime(today.Year, today.Month, 1);
             dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
         }
+        /// <summary>
+        /// load dữ liệu doanh thu theo ngày
+        /// </summary>
+        /// <param name="checkin"></param>
+        /// <param name="checkout"></param>
         private void loadIncome(DateTime checkin, DateTime checkout)
         {
             dtgvBill.DataSource = BLL.IncomeBill_BLL.Instance.GetListIncomeBillByDate(checkin, checkout);
         }
+        /// <summary>
+        /// load dữ liệu món ăn
+        /// </summary>
         private void loadFood()
         {
             foodList.DataSource = BLL.Food_BLL.Instance.getList();
         }
+        /// <summary>
+        /// load combobox danh mục
+        /// </summary>
         private void loadCbbCategory()
         {
             cbFoodCategory.DataSource = BLL.FoodCategory_BLL.Instance.getList();
             cbFoodCategory.DisplayMember = "Name";
             cbFoodCategory.ValueMember = "Id";
         }
+        /// <summary>
+        /// lấy dữ liệu món ăn từ form
+        /// </summary>
+        /// <returns></returns>
         private Food_DTO GetFood()
         {
             int id = Convert.ToInt32(txbFoodID.Text);
@@ -385,18 +430,30 @@ namespace GUI.QuanLi
             float price = (float)nmFoodPrice.Value;
             return new Food_DTO(id, name, idCategory, price);
         }
+        /// <summary>
+        /// lấy dữ liệu danh mục từ form
+        /// </summary>
+        /// <returns></returns>
         private FoodCategory_DTO GetCategory()
         {
             int id = Convert.ToInt32(txbCategoryID.Text);
             string name = txbCategoryName.Text;
             return new FoodCategory_DTO(id, name);
         }
+        /// <summary>
+        /// lấy dữ liệu bàn ăn từ form
+        /// </summary>
+        /// <returns></returns>
         private TableFood_DTO getTable()
         {
             int id = Convert.ToInt32(txbTableID.Text);
             string name = txbTableName.Text;
             return new TableFood_DTO(id, name , "Trống");
         }
+        /// <summary>
+        /// tìm kiếm món ăn theo tên
+        /// </summary>
+        /// <param name="foodName"></param>
         private void SearchFood(string foodName)
         {
             foodList.DataSource = BLL.Food_BLL.Instance.searchFoodByName(foodName);
@@ -406,7 +463,7 @@ namespace GUI.QuanLi
 
 
 
-
+        // event thay đổi dữ liệu cho bàn ăn
         private event EventHandler insertEvent;
         public event EventHandler InsertEvent
         {

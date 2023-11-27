@@ -102,7 +102,11 @@ namespace BLL
                 return 0;
             }
         }
-
+        /// <summary>
+        /// xoá billinfo by food id
+        /// </summary>
+        /// <param name="foodID"></param>
+        /// <returns></returns>
         public int deleteBillInfoByFoodID(int foodID)
         {
             List<BillInfo> billInfos = db.BillInfos.Where(x => x.idFood == foodID).ToList();
@@ -120,6 +124,11 @@ namespace BLL
                 return 0;
             }
         }
+        /// <summary>
+        /// delete billinfo by bill id
+        /// </summary>
+        /// <param name="billID"></param>
+        /// <returns></returns>
         public int deleteBillInfoByBillID(int billID)
         {
             List<BillInfo> billInfos = db.BillInfos.Where(x => x.idBill == billID).ToList();

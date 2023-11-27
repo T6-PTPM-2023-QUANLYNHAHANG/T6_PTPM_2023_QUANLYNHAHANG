@@ -16,7 +16,7 @@ namespace BLL
         public static TableFood_BLL Instance { get { if (instance == null) instance = new TableFood_BLL(); return instance; } private set => instance = value; }
         private TableFood_BLL() { }
         /// <summary>
-        /// Get list TableFood
+        /// lấy danh sách bàn ăn
         /// </summary>
         /// <returns> list table food</returns>
         public List<TableFood_DTO> getList()
@@ -31,7 +31,7 @@ namespace BLL
             return lst;
         }
         /// <summary>
-        /// Switch table (switch bill)
+        /// đổi bàn (đổi trạng thái của bàn)
         /// </summary>
         /// <param name="idTable1"></param>
         /// <param name="idTable2"></param>
@@ -69,6 +69,11 @@ namespace BLL
                 return false;
             }
         }
+        /// <summary>
+        /// thêm bàn ăn mới
+        /// </summary>
+        /// <param name="tb"></param>
+        /// <returns></returns>
         public int insertTable(TableFood_DTO tb)
         {
             int result = 0;
@@ -87,6 +92,11 @@ namespace BLL
                 return 0;
             }
         }
+        /// <summary>
+        /// đổi tên bàn ăn
+        /// </summary>
+        /// <param name="tb"></param>
+        /// <returns></returns>
         public int updateTable(TableFood_DTO tb)
         {
             int result = 0;
@@ -103,6 +113,11 @@ namespace BLL
                 return 0;
             }
         }
+        /// <summary>
+        /// xoá bàn ăn
+        /// </summary>
+        /// <param name="tb"></param>
+        /// <returns></returns>
         public int deleteTable(TableFood_DTO tb)
         {
             try
