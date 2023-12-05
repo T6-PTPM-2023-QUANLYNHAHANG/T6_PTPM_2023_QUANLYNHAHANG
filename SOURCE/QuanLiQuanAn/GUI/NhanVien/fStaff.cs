@@ -65,6 +65,7 @@ namespace GUI.NhanVien
         {
             int tableID = ((sender as Button).Tag as TableFood_DTO).Id;
             lsvBill.Tag = ((sender as Button).Tag as TableFood_DTO);
+            lbTbName.Text = ((sender as Button).Tag as TableFood_DTO).Name + "\n" + "tới: ";
             showBill(tableID);
         }
         private void btnAddFood_Click(object sender, EventArgs e)
@@ -107,8 +108,14 @@ namespace GUI.NhanVien
                 else
                 {
                     BLL.BIllinfo_BLL.Instance.updateBillinfo(idBillInfo, idFood, count);
+                    int countBillInfo = BLL.BIllinfo_BLL.Instance.countBillInfobyBillID(idBill);
+                    if (countBillInfo == 0)
+                    {
+                        BLL.Bill_BLL.Instance.deleteBillbyBillID(idBill);
+                    }
                 }
             }
+            nmFoodCount.Value = 1;
             showBill(idTable);
             loadTableFood();
         }

@@ -148,5 +148,21 @@ namespace BLL
                 return -1;
             }
         }
+        public int deleteBillbyBillID(int billID)
+        {
+            try
+            {
+                BIllinfo_BLL.Instance.deleteBillInfoByBillID(billID);
+                Bill f = db.Bills.Where(x => x.id == billID && x.status == 0).FirstOrDefault();
+                db.Bills.DeleteOnSubmit(f);
+                db.SubmitChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+
+                return -1;
+            }
+        }
     }
 }

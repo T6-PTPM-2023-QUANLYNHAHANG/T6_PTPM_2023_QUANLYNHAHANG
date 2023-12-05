@@ -48,11 +48,13 @@
             this.nmDisCount = new System.Windows.Forms.NumericUpDown();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbTbName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,7 +70,7 @@
             this.adminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(865, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(980, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,7 +109,7 @@
             this.panel2.Controls.Add(this.lsvBill);
             this.panel2.Location = new System.Drawing.Point(447, 85);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 339);
+            this.panel2.Size = new System.Drawing.Size(509, 321);
             this.panel2.TabIndex = 2;
             // 
             // lsvBill
@@ -121,7 +123,7 @@
             this.lsvBill.HideSelection = false;
             this.lsvBill.Location = new System.Drawing.Point(3, 6);
             this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(412, 309);
+            this.lsvBill.Size = new System.Drawing.Size(494, 309);
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
@@ -147,6 +149,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lbTbName);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txtTotalPrice);
             this.panel3.Controls.Add(this.label1);
@@ -156,13 +159,13 @@
             this.panel3.Controls.Add(this.btnCheckOut);
             this.panel3.Location = new System.Drawing.Point(447, 406);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(418, 76);
+            this.panel3.Size = new System.Drawing.Size(512, 76);
             this.panel3.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 19);
+            this.label2.Location = new System.Drawing.Point(183, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 9;
@@ -171,7 +174,7 @@
             // txtTotalPrice
             // 
             this.txtTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalPrice.Location = new System.Drawing.Point(175, 38);
+            this.txtTotalPrice.Location = new System.Drawing.Point(266, 33);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(150, 20);
@@ -182,7 +185,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(203, 13);
+            this.label1.Location = new System.Drawing.Point(294, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 7;
@@ -191,14 +194,14 @@
             // cbSwitchTable
             // 
             this.cbSwitchTable.FormattingEnabled = true;
-            this.cbSwitchTable.Location = new System.Drawing.Point(3, 38);
+            this.cbSwitchTable.Location = new System.Drawing.Point(84, 35);
             this.cbSwitchTable.Name = "cbSwitchTable";
             this.cbSwitchTable.Size = new System.Drawing.Size(75, 21);
             this.cbSwitchTable.TabIndex = 6;
             // 
             // btnSwitchTable
             // 
-            this.btnSwitchTable.Location = new System.Drawing.Point(3, 13);
+            this.btnSwitchTable.Location = new System.Drawing.Point(84, 5);
             this.btnSwitchTable.Name = "btnSwitchTable";
             this.btnSwitchTable.Size = new System.Drawing.Size(75, 26);
             this.btnSwitchTable.TabIndex = 5;
@@ -208,7 +211,7 @@
             // 
             // nmDisCount
             // 
-            this.nmDisCount.Location = new System.Drawing.Point(88, 38);
+            this.nmDisCount.Location = new System.Drawing.Point(186, 33);
             this.nmDisCount.Name = "nmDisCount";
             this.nmDisCount.Size = new System.Drawing.Size(74, 20);
             this.nmDisCount.TabIndex = 4;
@@ -216,7 +219,7 @@
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.Location = new System.Drawing.Point(331, 13);
+            this.btnCheckOut.Location = new System.Drawing.Point(422, 18);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(75, 46);
             this.btnCheckOut.TabIndex = 3;
@@ -226,18 +229,28 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.nmFoodCount);
             this.panel4.Controls.Add(this.btnAddFood);
             this.panel4.Controls.Add(this.cbFood);
             this.panel4.Controls.Add(this.cbCategory);
             this.panel4.Location = new System.Drawing.Point(447, 27);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(418, 52);
+            this.panel4.Size = new System.Drawing.Size(509, 52);
             this.panel4.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(437, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Số lượng";
             // 
             // nmFoodCount
             // 
-            this.nmFoodCount.Location = new System.Drawing.Point(367, 18);
+            this.nmFoodCount.Location = new System.Drawing.Point(442, 28);
             this.nmFoodCount.Minimum = new decimal(new int[] {
             100,
             0,
@@ -254,7 +267,7 @@
             // 
             // btnAddFood
             // 
-            this.btnAddFood.Location = new System.Drawing.Point(270, 3);
+            this.btnAddFood.Location = new System.Drawing.Point(350, 3);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(75, 46);
             this.btnAddFood.TabIndex = 2;
@@ -267,7 +280,7 @@
             this.cbFood.FormattingEnabled = true;
             this.cbFood.Location = new System.Drawing.Point(3, 28);
             this.cbFood.Name = "cbFood";
-            this.cbFood.Size = new System.Drawing.Size(261, 21);
+            this.cbFood.Size = new System.Drawing.Size(329, 21);
             this.cbFood.TabIndex = 1;
             // 
             // cbCategory
@@ -275,7 +288,7 @@
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(3, 3);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(261, 21);
+            this.cbCategory.Size = new System.Drawing.Size(329, 21);
             this.cbCategory.TabIndex = 0;
             // 
             // flpTable
@@ -286,11 +299,22 @@
             this.flpTable.Size = new System.Drawing.Size(429, 452);
             this.flpTable.TabIndex = 5;
             // 
+            // lbTbName
+            // 
+            this.lbTbName.AutoSize = true;
+            this.lbTbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTbName.Location = new System.Drawing.Point(20, 18);
+            this.lbTbName.Name = "lbTbName";
+            this.lbTbName.Size = new System.Drawing.Size(33, 13);
+            this.lbTbName.TabIndex = 10;
+            this.lbTbName.Text = "Bàn ";
+            this.lbTbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // fStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 494);
+            this.ClientSize = new System.Drawing.Size(980, 489);
             this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -307,6 +331,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDisCount)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -340,5 +365,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbTbName;
     }
 }

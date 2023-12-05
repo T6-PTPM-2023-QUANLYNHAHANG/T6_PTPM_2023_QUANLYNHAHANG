@@ -146,5 +146,14 @@ namespace BLL
                 return 0;
             }
         }
+        /// <summary>
+        /// get count billinfo by bill id
+        /// </summary>
+        /// <param name="billID"></param>
+        /// <returns></returns>
+        public int countBillInfobyBillID(int billID)
+        {
+            return db.BillInfos.Where(x => x.idBill == billID).Count();
+        }
     }
 }
