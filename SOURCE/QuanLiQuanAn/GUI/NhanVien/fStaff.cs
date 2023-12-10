@@ -319,8 +319,12 @@ namespace GUI.NhanVien
 
 
 
+
         #endregion
 
-        
+        private void lsvBill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

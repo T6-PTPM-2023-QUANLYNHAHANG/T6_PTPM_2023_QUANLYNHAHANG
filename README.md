@@ -12,16 +12,6 @@
     <td>20011180172</td>
     <td>Nhóm trưởng</td>
   </tr>
-  <tr>
-    <td>Trần Thanh Nhạc</td>
-    <td>2001207111</td>
-    <td>Thành viên</td>
-  </tr>
-<tr>
-    <td>Đỗ Quốc Anh</td>
-    <td>2001207301</td>
-    <td>Thành viên</td>
-  </tr>
 </table>
 <br/>
 <h2>Chức năng:</h2>

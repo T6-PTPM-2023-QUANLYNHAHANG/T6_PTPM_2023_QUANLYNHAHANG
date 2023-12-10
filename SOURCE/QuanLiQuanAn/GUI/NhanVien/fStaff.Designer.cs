@@ -40,6 +40,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbTbName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbTbName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -127,6 +127,7 @@
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
+            this.lsvBill.SelectedIndexChanged += new System.EventHandler(this.lsvBill_SelectedIndexChanged);
             // 
             // columnHeader2
             // 
@@ -161,6 +162,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(512, 76);
             this.panel3.TabIndex = 3;
+            // 
+            // lbTbName
+            // 
+            this.lbTbName.AutoSize = true;
+            this.lbTbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTbName.Location = new System.Drawing.Point(20, 18);
+            this.lbTbName.Name = "lbTbName";
+            this.lbTbName.Size = new System.Drawing.Size(33, 13);
+            this.lbTbName.TabIndex = 10;
+            this.lbTbName.Text = "Bàn ";
+            this.lbTbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -298,17 +310,6 @@
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(429, 452);
             this.flpTable.TabIndex = 5;
-            // 
-            // lbTbName
-            // 
-            this.lbTbName.AutoSize = true;
-            this.lbTbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTbName.Location = new System.Drawing.Point(20, 18);
-            this.lbTbName.Name = "lbTbName";
-            this.lbTbName.Size = new System.Drawing.Size(33, 13);
-            this.lbTbName.TabIndex = 10;
-            this.lbTbName.Text = "Bàn ";
-            this.lbTbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // fStaff
             // 
